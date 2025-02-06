@@ -2,13 +2,31 @@
 Heavily borrows from [this tutorial](https://www.doczamora.com/audio-transcription-from-huggingface-pre-trained-model)
 
 ## To run this script:
+Make sure you're running this in an environment that has python >= 3.10 and has the packages in `requirements.txt` installed. 
+
+If you're running this on the CoMM Lab machine, you can use the virtual environment that I made a long time ago with much suffering.
+
+Activate it using `source /home/asmithh/gbpn/bin/activate`. 
+
+**PLEASE DO NOT EDIT THIS VIRTUAL ENVIRONMENT ON YOUR OWN**
+
+You can run the script with this syntax:
+`python3 transcribe_interview.py -i $INFILE -o $OUTFILE -c $CONFIG_FILE`
+
 `INFILE` should be a .mp3 file with your audio you'd like to transcribe.
 
 `OUTFILE` should be a .tsv file that has a name you'll successfully associate with your input audio (`test.tsv` may not be ideal, for example)
 
+`CONFIG_FILE` is optional; if you don't include a config file it will default to the one that's included with this code. 
+
+### The config file:
+Currently specifies which device to use (0 for the main GPU on the CoMM Lab machine; `cpu` for CPU (which I do not recommend)) and which transcription model to use (defaults to `distil-whisper/distil-medium.en`). You can change these settings, but please do so cautiously!!  
+
 
 ## Useful tips:
 
-Note: to transform m4a to mp3: `ffmpeg -i "infile.m4a" -c:v copy -c:a libmp3lame -q:a 4 outf.mp3`
+To transform m4a to mp3, you can use the `ffmpeg` command line utility: `ffmpeg -i "infile.m4a" -c:v copy -c:a libmp3lame -q:a 4 outf.mp3`
 
 This is intended to run on GPU; running the model on CPU may be much slower. 
+
+The `whisper` class of transcription models may hallucinate when given audio without speech; please keep an eye out for this!
