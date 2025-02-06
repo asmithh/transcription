@@ -1,0 +1,3 @@
+model: distil-whisper/distil-medium.en
+device: 0 # can be cpu or an integer (GPU number).
+
