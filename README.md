@@ -30,3 +30,14 @@ To transform m4a to mp3, you can use the `ffmpeg` command line utility: `ffmpeg 
 This is intended to run on GPU; running the model on CPU may be much slower. 
 
 The `whisper` class of transcription models may hallucinate when given audio without speech; please keep an eye out for this!
+
+## Running on Discovery
+### Setup
+1. Get a Discovery account using [these instructions](https://rc.northeastern.edu/getting-access/).
+2. Go to https://ood.discovery.neu.edu.
+3. Click on the "Cluster" tab and then click "Discovery Shell Access".
+4. Once you have a terminal window open, request a session: `srun --partition=short --nodes=1 --cpus-per-task=4 --pty /bin/bash`
+5. Next, clone this repository and enter its directory (`cd transcription`).
+6. Load `conda` (Anaconda, a Python package manager) using this command: `module load anaconda3/2022.05`
+7. Create a blank Conda environment: `conda create -y -n NAME python==3.12.1` where `NAME` should be something you'll remember is associated with this project.
+8. 
