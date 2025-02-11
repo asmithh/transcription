@@ -1,6 +1,7 @@
-soundfile>=0.13.1
+soundfile
 transformers>=4.38.2
 librosa>=0.10.2.post1
+audio2numpy>=0.1.2
 numpy>=1.24.4
--i https://download.pytorch.org/whl/cu118
+--find-links https://download.pytorch.org/whl/cu118
 torch>=2.1.1

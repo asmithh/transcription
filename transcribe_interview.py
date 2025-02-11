@@ -2,9 +2,9 @@
 import argparse
 import yaml
 
+import audio2numpy
 import librosa
 import numpy as np
-import soundfile as sf
 from transformers import pipeline
 from transformers.utils import logging
 logging.set_verbosity_error()
@@ -32,7 +32,7 @@ DEVICE = CONFIG['device']
 
 asr = pipeline("automatic-speech-recognition", model=MODEL, device=DEVICE)
 asr_sampling_rate = asr.feature_extractor.sampling_rate
-audio, sampling_rate = sf.read(INFILE)
+audio, sampling_rate = audio2numpy.audio_from_file(INFILE)
 
 audio_transposed = np.transpose(audio)
 audio_mono = librosa.to_mono(audio_transposed)
