@@ -40,9 +40,11 @@ The `whisper` class of transcription models may hallucinate when given audio wit
 5. Next, clone this repository and enter its directory (`cd transcription`).
 6. Load `conda` (Anaconda, a Python package manager) using this command: `module load anaconda3/2022.05`
 7. Create a blank Conda environment: `conda create -y -n NAME python==3.12.1` where `NAME` should be something you'll remember is associated with this project.
-8. Activate your Conda environment: `conda activate NAME`
+8. Activate your Conda environment: `source activate NAME`
 9. Install the necessary packages: `python3 -m pip install -r requirements.txt` (this will take forever).
 10. Now we'll open up a GPU session: `srun --partition=gpu --nodes=1 --pty --gres=gpu:1 --ntasks=1 --mem=4GB --time=01:00:00 /bin/bash`
 11. Now we'll load CUDA; CUDA is a piece of software that lets Python talk to the GPU: `module load cuda/12.1`
 12. Once again, load `conda`: `module load anaconda3/2022.05`
-13. And then activate your environment: `conda activate NAME`
+13. And then activate your environment: `source activate NAME`
+14. Change directories to the transcription folder: `cd transcription`
+15. 
