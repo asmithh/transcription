@@ -45,4 +45,15 @@ The `whisper` class of transcription models may hallucinate when given audio wit
 10. Install the necessary packages: `python3 -m pip install -r requirements.txt` (this will take forever).
 11. Back at https://ood.discovery.neu.edu, go to the "Files" tab and open up your home directory. Click the "Upload" button and upload a .mp3 file. Keep track of its name. 
 12. The fun part: go back to your terminal window and run `python3 transcribe_interview.py -i ~/INPUT_FILE_NAME -o ~/OUT_FILE_NAME.tsv`, where INPUT_FILE_NAME is the name of your input file, and OUT_FILE_NAME is some name for your output file that you'll remember is associated with that input file.
-13. Go back to your file browser and look for OUT_FILE_NAME.tsv. You can download it and open it in Excel or Google Sheets. 
+13. Go back to your file browser and look for OUT_FILE_NAME.tsv. You can download it and open it in Excel or Google Sheets.
+
+### Transcribing once you're set up:
+1. Go to https://ood.discovery.neu.edu.
+2. Click on the "Cluster" tab and then click "Discovery Shell Access".
+3. Once you have a terminal window open, request a session: `srun --partition=gpu --nodes=1 --pty --gres=gpu:1 --ntasks=1 --mem=4GB --time=02:00:00 /bin/bash`
+4. Now we'll load CUDA; CUDA is a piece of software that lets Python talk to the GPU: `module load cuda/12.1`
+5. Load `conda` (Anaconda, a Python package manager) using this command: `module load anaconda3/2022.05`
+6. Activate your Conda environment: `source activate NAME`
+7. Back at https://ood.discovery.neu.edu, go to the "Files" tab and open up your home directory. Click the "Upload" button and upload a .mp3 file. Keep track of its name.
+8. The fun part: go back to your terminal window and run `python3 transcribe_interview.py -i ~/INPUT_FILE_NAME -o ~/OUT_FILE_NAME.tsv`, where INPUT_FILE_NAME is the name of your input file, and OUT_FILE_NAME is some name for your output file that you'll remember is associated with that input file.
+9. Go back to your file browser and look for OUT_FILE_NAME.tsv. You can download it and open it in Excel or Google Sheets.
