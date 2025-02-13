@@ -37,7 +37,7 @@ The `whisper` class of transcription models may hallucinate when given audio wit
 2. Go to https://ood.discovery.neu.edu.
 3. Click on the "Cluster" tab and then click "Discovery Shell Access".
 4. Once you have a terminal window open, request a session: `srun --partition=gpu --nodes=1 --pty --gres=gpu:1 --ntasks=1 --mem=4GB --time=02:00:00 /bin/bash`
-5. Next, clone this repository and enter its directory (`cd transcription`).
+5. Next, clone this repository and enter its directory (`cd transcription`). To clone a repository, you can find instructions [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or you can click the green button at the top of this page and choose the `HTTPS` tab. Then click the "copy" icon. 
 6. Now we'll load CUDA; CUDA is a piece of software that lets Python talk to the GPU: `module load cuda/12.1`
 7. Load `conda` (Anaconda, a Python package manager) using this command: `module load anaconda3/2022.05`
 8. Create a blank Conda environment: `conda create -y -n NAME python==3.12.1` where `NAME` should be something you'll remember is associated with this project.
