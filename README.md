@@ -1,7 +1,7 @@
 # Transcription via huggingface
 Heavily borrows from [this tutorial](https://www.doczamora.com/audio-transcription-from-huggingface-pre-trained-model)
 
-## To run this script:
+## To run this code:
 Make sure you're running this in an environment that has python >= 3.10 and has the packages in `requirements.txt` installed. 
 
 If you're running this on the CoMM Lab machine, you can use the virtual environment that I made a long time ago with much suffering.
@@ -10,12 +10,23 @@ Activate it using `source /home/asmithh/gbpn/bin/activate`.
 
 **PLEASE DO NOT EDIT THIS VIRTUAL ENVIRONMENT ON YOUR OWN**
 
+### TSV version:
 You can run the script with this syntax:
 `python3 transcribe_interview.py -i $INFILE -o $OUTFILE -c $CONFIG_FILE`
 
 `INFILE` should be a .mp3 file with your audio you'd like to transcribe.
 
 `OUTFILE` should be a .tsv file that has a name you'll successfully associate with your input audio (`test.tsv` may not be ideal, for example)
+
+`CONFIG_FILE` is optional; if you don't include a config file it will default to the one that's included with this code. 
+
+### VTT version:
+You can run the script with this syntax:
+`python3 vtt_transcribe_interview.py -i $INFILE -o $OUTFILE -c $CONFIG_FILE`
+
+`INFILE` should be a .mp3 file with your audio you'd like to transcribe.
+
+`OUTFILE` should be a .vtt file that has a name you'll successfully associate with your input audio (`test.vtt` may not be ideal, for example)
 
 `CONFIG_FILE` is optional; if you don't include a config file it will default to the one that's included with this code. 
 
