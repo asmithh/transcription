@@ -1,6 +1,6 @@
 import easygui
 import sys
-from vtt_transcribe_interview import *
+from transcribe_interview import *
 import os
 
 msg = "What kind of file are you loading for for transcription?"
