@@ -2,7 +2,7 @@
 Heavily borrows from [this tutorial](https://www.doczamora.com/audio-transcription-from-huggingface-pre-trained-model)
 
 ## Using the GUI
-First, make sure you have python >= 3.10 installed (you can check this by typing `python` or `python3` into your terminal.
+First, make sure you have python >= 3.10 and < 3.14 (>= 3.14 will break because of some deprecated `numba` calls) installed (you can check this by typing `python` or `python3` into your terminal.
 
 Also make sure you have [ffmpeg](https://ffmpeg.org/download.html) installed on your computer if you will be convering .mp4 files to .mp3 files.
 
@@ -50,6 +50,8 @@ To transform m4a to mp3, you can use the `ffmpeg` command line utility: `ffmpeg 
 This is intended to run on GPU; running the model on CPU is much slower (~20 minutes for ~30 minutes of audio on my 2021 M1 Macbook with 16 GB of RAM). 
 
 The `whisper` class of transcription models may hallucinate when given audio without speech; please keep an eye out for this!
+
+You may also see utterances or sentences duplicated in the transcribed text.
 
 ## Running on Explorer
 ### Setup

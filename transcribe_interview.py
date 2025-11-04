@@ -104,11 +104,11 @@ if __name__ == "__main__":
     CONFIG_F = args.config
 
     CONFIG = load_config(CONFIG_F)
-    if outfile[-4:] == '.vtt':
+    if OUTFILE[-4:] == '.vtt':
         run_pipeline(INFILE, CONFIG, OUTFILE, filetype='VTT')
-    elif outfile[-4:] == '.txt':
+    elif OUTFILE[-4:] == '.txt':
         run_pipeline(INFILE, CONFIG, OUTFILE, filetype='TXT')
-    elif outfile[-4:] == '.tsv':
+    elif OUTFILE[-4:] == '.tsv':
         print("TSV format is cumbersome, just FYI")
         run_pipeline(INFILE, CONFIG, OUTFILE, filetype='TSV')
     else:
